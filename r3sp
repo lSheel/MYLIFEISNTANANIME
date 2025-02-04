@@ -1,0 +1,50 @@
+1. Microservicios: 
+Arquitectura donde una aplicación se divide en servicios pequeños e independientes que se comunican mediante APIs.
+Ventajas: Escalabilidad independiente, despliegue aislado, tolerancia a fallos, flexibilidad tecnológica.
+Desventajas: Complejidad operativa, latencia en la comunicación, dificultad en pruebas y depuración.
+
+2. Comunicación entre microservicios:
+REST: Ideal para APIs públicas y operaciones CRUD, por su simplicidad y amplia adopción.
+gRPC: Recomendado para comunicación interna de alto rendimiento, streaming y bajas latencias.
+Mensajería basada en eventos: Perfecta para arquitecturas event-driven, desacoplamiento y procesamiento asíncrono.
+
+3. En aplicaciones web de alta demanda, el caching es clave para mejorar el rendimiento y reducir la carga en servidores y bases de datos. 
+CACHING en el cliente y CDN: Se utiliza el almacenamiento cache en el navegador o por redes CND para guardar contenido estatico asi reduciendo latencias y la carga del servidor
+CACHING por parte del servidor: Se utilizan proxies reversos (como NGIX) o caches en memoria donde se almacen respuetas frecuentes 
+Políticas de expiración e invalidación: Es fundamental definir tiempos de vida (TTL) y mecanismos de invalidación (basados en eventos o versiones) para asegurar que el contenido cacheado se mantenga actualizado sin afectar la consistencia de los datos.
+
+4.Complejidad algorítmica:
+La importancia de la complejidad algoritmica determina la eficiencia en tiempo y espacio a medida que aumenta la entrada de datos.
+Mejora el rendimiento, escalabilidad, optimización de recursos y reduce costos operativos.
+
+5.
+Las colas de mensajes son sistemas de middleware que permiten la comunicación asíncrona entre diferentes aplicaciones o servicios. 
+Importancia en CIENI: Integración de sistemas, escalabilidad, resiliencia y procesamiento asíncrono.
+
+6. La defensa en profundidad es un enfoque de seguridad que implementa múltiples barreras o capas de protección para salvaguardar información sensible. La idea es que, si una capa falla o es vulnerada, las demás continúan protegiendo el sistema, reduciendo el riesgo global.
+Se pueden implementar las siguiente medios de seguridad
+Seguridad de red: Uso de firewalls, segmentación de la red e IDS/IPS para filtrar el tráfico no autorizado 
+Seguridad de la aplicación: Incorporación de controles de autenticación robustos (como autenticación multifactor), validación y saneamiento de entradas, y la utilización de un WAF 
+Seguridad de datos: Cifrado de la información tanto en tránsito (usando TLS/SSL)
+
+7.Para optimizar el rendimiento de un microservicio que maneja grandes volúmenes de datos es fundamental abordar mejoras tanto a nivel algorítmico como de infraestructura:
+A nivel algorítmico:
+Reducir la complejidad: Seleccionar algoritmos con menor complejidad
+Algoritmos eficientes: Usar técnicas óptimas de búsqueda (como búsqueda binaria o índices) y de ordenamiento.
+Estructuras de datos y procesamiento: Elegir estructuras de datos adecuadas, aplicar paginación, procesamiento en paralelo y, cuando sea posible, cachear resultados intermedios para minimizar cálculos repetitivos.
+A nivel de infraestructura:
+Escalado: Implementar escalado horizontal (añadiendo más instancias) o vertical (mejorando recursos de la instancia) para distribuir la carga.
+Balanceo de carga: Distribuir las peticiones entre múltiples instancias para evitar cuellos de botella y mejorar la disponibilidad.
+Monitoreo y ajuste: Utilizar herramientas de monitoreo y profiling para identificar cuellos de botella y ajustar recursos de forma proactiva.
+
+8.B Tree
+Uso Apropiado: Ideal para bases de datos masivas almacenadas en disco. Diseñado para minimizar accesos a disco, facilitando búsquedas, inserciones y eliminaciones en grandes volúmenes de datos.
+Limitaciones:
+La actualización del índice puede implicar reestructuraciones que afectan el rendimiento.
+Menor velocidad comparada con algoritmos in-memory cuando los datos sí pueden residir en memoria.
+Búsqueda Binaria en Memoria:
+Uso Apropiado: Óptima cuando los datos están completamente cargados en memoria y ordenados, lo que es viable para conjuntos de datos pequeños o medianos
+Limitaciones:
+Requiere que el dataset completo quepa en memoria.
+Menos flexible para manejar actualizaciones dinámicas en bases de datos masivas.
+
