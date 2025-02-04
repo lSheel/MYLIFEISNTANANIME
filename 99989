@@ -1,0 +1,14 @@
+Justificación del Algoritmo y Análisis de Complejidad
+Algoritmo y Diseño:
+o	Filtrado y Agrupación: Se recorre la lista de registros una sola vez. Para cada registro, se verifica si la fecha de ingreso se encuentra en el intervalo especificado. En caso afirmativo, se utiliza un diccionario (defaultdict) para agrupar y acumular la cantidad de registros y, de ser requerido, la suma de la métrica adicional.
+o	Acumulación y Cálculo del Promedio: Una vez procesados todos los registros, se recorre el diccionario de acumuladores para calcular el promedio (dividiendo la suma acumulada por el conteo) para cada tipo de enfermedad.
+Complejidad Temporal:
+o	La función itera una sola vez sobre el conjunto de datos, lo que implica una complejidad O(n), donde n es el número de registros.
+o	La posterior iteración sobre los tipos de enfermedad es de complejidad O(k), siendo k el número de tipos de enfermedad (generalmente muy inferior a n).
+Complejidad Espacial:
+o	Se utiliza un diccionario para almacenar la cantidad y la suma acumulada por cada tipo de enfermedad. Esto requiere espacio O(k), donde k es el número de tipos de enfermedad.
+o	Dado que k suele ser pequeño en comparación con n, la utilización de memoria es eficiente incluso para altos volúmenes de datos.
+Optimización para Alto Volumen de Datos:
+o	Procesamiento en Streaming: La solución está diseñada para procesar los datos en una única pasada, lo que la hace adecuada para procesamientos en streaming o para manejar archivos grandes que se puedan leer de forma secuencial.
+o	Uso de Estructuras Eficientes: El uso de un defaultdict permite una inserción y actualización en tiempo constante para cada registro.
+o	Paralelismo o Distribución: En escenarios donde n es extremadamente grande, se podría optar por dividir el conjunto de datos en particiones y procesarlas en paralelo (por ejemplo, usando módulos como multiprocessing en Python o frameworks de Big Data como Apache Spark), combinando posteriormente los resultados parciales.
